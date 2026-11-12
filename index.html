@@ -423,7 +423,7 @@ details.more[open] summary .pm{transform:rotate(45deg)}
       </div>
 
       <div class="hero-actions" data-h>
-        <a class="btn" href="mailto:tasadaz@naver.com">이메일 보내기</a>
+        <a class="btn" href="mailto:tasadaz@naver.com?subject=%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%B3%B4%EA%B3%A0%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4" data-mail="tasadaz@naver.com">이메일 보내기</a>
         <a class="link-arrow" href="#case">대표 성과 보기 ↓</a>
       </div>
     </div>
@@ -737,7 +737,7 @@ pixel_init       픽셀 설치</div>
     <h2 class="big" data-r>예산은 키우고,<br><em>효율은 지키겠습니다.</em></h2>
     <p class="lead" data-r>이야기 나눠 보고 싶으시다면 편하게 연락 주세요.</p>
     <div class="mail" data-r>
-      <a class="btn" href="mailto:tasadaz@naver.com">이메일 보내기</a>
+      <a class="btn" href="mailto:tasadaz@naver.com?subject=%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%B3%B4%EA%B3%A0%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4" data-mail="tasadaz@naver.com">이메일 보내기</a>
       <span class="addr">tasadaz@naver.com</span>
       <button class="copy" type="button" data-copy="tasadaz@naver.com">주소 복사</button>
     </div>
@@ -746,7 +746,7 @@ pixel_init       픽셀 설치</div>
 </section>
 </main>
 
-<div class="sticky-cta" id="stickyCta"><a href="mailto:tasadaz@naver.com">이메일 보내기 · tasadaz@naver.com</a></div>
+<div class="sticky-cta" id="stickyCta"><a href="mailto:tasadaz@naver.com?subject=%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%B3%B4%EA%B3%A0%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4" data-mail="tasadaz@naver.com">이메일 보내기 · tasadaz@naver.com</a></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -792,6 +792,23 @@ pixel_init       픽셀 설치</div>
       var v = b.getAttribute('data-copy');
       try { navigator.clipboard.writeText(v).then(function(){ showToast('이메일 주소를 복사했어요'); }, function(){ showToast(v); }); }
       catch(e){ showToast(v); }
+    });
+  });
+
+  /* mailto fallback: no mail app opened -> copy address */
+  document.querySelectorAll('a[data-mail]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var addr = a.getAttribute('data-mail'), left = false;
+      var mark = function(){ left = true; };
+      addEventListener('blur', mark, {once:true});
+      document.addEventListener('visibilitychange', mark, {once:true});
+      setTimeout(function(){
+        removeEventListener('blur', mark);
+        document.removeEventListener('visibilitychange', mark);
+        if (left) return;
+        try { navigator.clipboard.writeText(addr).then(function(){ showToast('메일 앱이 없어 주소를 복사했어요 · ' + addr); }, function(){ showToast(addr); }); }
+        catch(e){ showToast(addr); }
+      }, 1000);
     });
   });
 

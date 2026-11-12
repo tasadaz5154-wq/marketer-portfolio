@@ -367,6 +367,10 @@ details.more[open] summary .pm{transform:rotate(45deg)}
 @media (max-width:760px){.sticky-cta{display:block}}
 .toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:99px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:all .35s var(--ease);z-index:80}
 .toast.on{opacity:1;transform:translate(-50%,0)}
+.toast.big{bottom:auto;top:50%;transform:translate(-50%,calc(-50% + 20px));padding:32px 44px;border-radius:22px;font-size:19px;line-height:1.5;text-align:center;width:max-content;max-width:calc(100vw - 32px);background:#fff;color:var(--ink);border:2px solid var(--accent);box-shadow:0 0 0 100vmax rgba(8,14,26,.45),0 24px 70px rgba(0,0,0,.4)}
+.toast.big.on{transform:translate(-50%,-50%)}
+.toast.big b{display:block;margin-top:8px;font-size:clamp(22px,6vw,32px);font-weight:900;letter-spacing:-.01em;word-break:break-all;color:var(--accent)}
+.toast.big small{display:block;margin-top:10px;font-size:15px;font-weight:500;color:var(--sub)}
 
 /* reveal (JS only) */
 .anim [data-r]{opacity:0;transform:translateY(28px)}
@@ -786,7 +790,15 @@ pixel_init       픽셀 설치</div>
 
   /* copy + toast */
   var toast = document.getElementById('toast'), tt;
-  function showToast(msg){ toast.textContent = msg; toast.classList.add('on'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('on'); }, 2000); }
+  function showToast(msg){ toast.classList.remove('big'); toast.textContent = msg; toast.classList.add('on'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('on'); }, 2000); }
+  function showBigToast(title, addr, note){
+    toast.innerHTML = '';
+    toast.appendChild(document.createTextNode(title));
+    var b = document.createElement('b'); b.textContent = addr; toast.appendChild(b);
+    if (note) { var s = document.createElement('small'); s.textContent = note; toast.appendChild(s); }
+    toast.classList.add('big', 'on'); clearTimeout(tt);
+    tt = setTimeout(function(){ toast.classList.remove('on'); }, 4500);
+  }
   document.querySelectorAll('[data-copy]').forEach(function(b){
     b.addEventListener('click', function(){
       var v = b.getAttribute('data-copy');
@@ -806,8 +818,9 @@ pixel_init       픽셀 설치</div>
         removeEventListener('blur', mark);
         document.removeEventListener('visibilitychange', mark);
         if (left) return;
-        try { navigator.clipboard.writeText(addr).then(function(){ showToast('메일 앱이 없어 주소를 복사했어요 · ' + addr); }, function(){ showToast(addr); }); }
-        catch(e){ showToast(addr); }
+        var manual = function(){ showBigToast('메일 앱이 없어요. 아래 주소로 보내 주세요', addr, '네이버·Gmail 등에서 받는 사람에 입력해 주세요'); };
+        try { navigator.clipboard.writeText(addr).then(function(){ showBigToast('이메일 주소를 복사했어요', addr, '네이버·Gmail 등에서 받는 사람에 붙여넣기 해 주세요'); }, manual); }
+        catch(e){ manual(); }
       }, 1000);
     });
   });

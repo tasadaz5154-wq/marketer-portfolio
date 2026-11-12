@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마케터 강동욱 | 브랜딩을 그리고, 데이터를 쓰는 마케터</title>
+<meta name="description" content="네이버 검색광고 월 광고비를 5배 키우는 동안 CPA는 9%만 올린 퍼포먼스 마케터 강동욱의 포트폴리오입니다.">
+<meta property="og:title" content="마케터 강동욱 | 브랜딩을 그리고, 데이터를 쓰는 마케터">
+<meta property="og:description" content="광고비는 5배 늘었지만, CPA는 9%만 올랐습니다.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F4EF; --bg2:#EEEBE3; --ink:#141414; --sub:#5C5C5C; --line:#DAD5CA;
+  --accent:#2F5BFF; --navy:#0E1A2B; --navy2:#16243A; --on-navy:#EEF1F6; --sub-navy:#A9B4C6; --accent-navy:#7E9BFF;
+  --serif:"Instrument Serif", "Times New Roman", serif;
+  --sans:"Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --pad:clamp(20px, 5vw, 56px);
+  --max:1200px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,h4,p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:0}
+.label{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.label .no{font-family:var(--serif);font-size:20px;letter-spacing:0;font-style:italic;text-transform:none;color:var(--accent)}
+.label::after{content:"";flex:1;height:1px;background:currentColor;opacity:.25}
+.h2{font-size:clamp(30px,6.6vw,60px);line-height:1.22;font-weight:900;letter-spacing:-.04em}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--sub);line-height:1.75}
+.m-only{display:none}
+@media (max-width:640px){.m-only{display:inline}.d-only{display:none}}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* progress + header */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;z-index:60}
+header.top{position:fixed;inset:0 0 auto 0;z-index:50;transition:transform .4s var(--ease),background .3s,backdrop-filter .3s}
+header.top.scrolled{background:rgba(246,244,239,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+header.top.hide{transform:translateY(-100%)}
+header.top.on-dark{color:var(--on-navy)}
+header.top.on-dark.scrolled{background:rgba(14,26,43,.82);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:900;letter-spacing:.08em;font-size:14px;text-decoration:none}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center}
+.nav ul a{text-decoration:none;font-size:14px;font-weight:500;padding:10px 0;opacity:.8}
+.nav ul a:hover{opacity:1}
+.nav .cta-mini{background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:99px;opacity:1}
+header.top.on-dark .cta-mini{background:var(--on-navy);color:var(--navy)}
+.burger{display:none;width:44px;height:44px;border:0;background:none;color:inherit;cursor:pointer;margin-right:-10px}
+.burger span{display:block;width:22px;height:2px;background:currentColor;margin:5px auto;transition:transform .3s}
+.menu{position:fixed;inset:0;background:var(--navy);color:var(--on-navy);z-index:70;display:flex;flex-direction:column;justify-content:center;padding:0 var(--pad);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.menu.open{opacity:1;visibility:visible}
+.menu a{font-size:34px;font-weight:900;text-decoration:none;padding:10px 0;letter-spacing:-.03em}
+.menu a .serif{font-style:italic;color:var(--accent-navy);font-size:22px;margin-right:12px}
+.menu .close{position:absolute;top:10px;right:calc(var(--pad) - 10px);width:44px;height:44px;border:0;background:none;color:inherit;font-size:28px;cursor:pointer}
+@media (max-width:760px){.nav ul{display:none}.burger{display:block}.nav{height:56px}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:99px;background:var(--accent);color:#fff;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .3s var(--ease),background .3s}
+.btn:hover{transform:translateY(-2px);background:#1E47E6}
+.link-arrow{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:none;border-bottom:1px solid currentColor;line-height:1.3}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:110px 0 72px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 300px;gap:64px;align-items:end}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--sub);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:clamp(36px,8.6vw,86px);line-height:1.14;font-weight:900;letter-spacing:-.045em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln > span{display:inline-block}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{margin-top:26px;max-width:620px;font-size:clamp(17px,2.2vw,19px);color:var(--sub)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font-size:13px;font-weight:500;padding:6px 12px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.5);line-height:1.4}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border-top:1px solid var(--ink)}
+.stat{padding:20px 20px 0 0}
+.stat + .stat{padding-left:20px;border-left:1px solid var(--line)}
+.stat .num{font-family:var(--serif);font-size:clamp(48px,7vw,84px);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.stat .num small{font-family:var(--sans);font-size:.36em;font-weight:700;color:var(--ink);margin-left:4px;vertical-align:.2em}
+.stat .k{font-weight:700;margin-top:10px;font-size:16px}
+.stat .v{font-size:14px;color:var(--sub);line-height:1.5}
+.hero-actions{display:flex;flex-wrap:wrap;gap:22px;align-items:center;margin-top:40px}
+.portrait{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:3/4;background:#ddd}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.portrait figcaption{position:absolute;left:14px;bottom:12px;color:#fff;font-size:12px;letter-spacing:.12em;font-weight:700;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.scroll-cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-size:11px;letter-spacing:.2em;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-cue i{width:1px;height:34px;background:var(--sub);transform-origin:top;animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.portrait-col{display:none}}
+@media (max-width:640px){
+  .hero{padding:92px 0 56px;min-height:auto}
+  .hero-stats{grid-template-columns:1fr;margin-top:36px}
+  .stat,.stat + .stat{padding:16px 0;border-left:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:118px 1fr;align-items:center;gap:0 14px}
+  .stat .num{font-size:50px;grid-row:span 2}
+  .stat .k{margin-top:0}
+  .hero-actions{margin-top:32px}
+  .scroll-cue{display:none}
+  .m-avatar{display:flex!important}
+}
+.m-avatar{display:none;align-items:center;gap:12px;margin-bottom:22px}
+.m-avatar img{width:56px;height:56px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.m-avatar span{font-size:14px;font-weight:700}
+.m-avatar span b{display:block;font-size:12px;color:var(--sub);font-weight:500;letter-spacing:.04em}
+
+/* sections */
+section{position:relative}
+.sec{padding:clamp(80px,13vw,170px) 0}
+.dark{background:var(--navy);color:var(--on-navy)}
+.dark .label,.dark .lead{color:var(--sub-navy)}
+.dark .label .no{color:var(--accent-navy)}
+
+/* case */
+.case-open .h2{margin-top:32px;font-size:clamp(34px,7.6vw,84px);line-height:1.15}
+.case-open .h2 em{font-style:normal;color:var(--accent-navy)}
+.meta-line{margin-top:28px;display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--sub-navy);font-size:15px}
+.meta-line b{color:var(--on-navy);font-weight:700}
+.why{margin-top:clamp(56px,9vw,110px);display:grid;grid-template-columns:220px 1fr;gap:28px;border-top:1px solid rgba(255,255,255,.14);padding-top:28px}
+.why h3{font-size:15px;color:var(--sub-navy);font-weight:700}
+.why p{font-size:clamp(19px,2.6vw,26px);line-height:1.6;font-weight:500;max-width:760px}
+.why p b{color:var(--accent-navy);font-weight:700}
+@media (max-width:640px){.why{grid-template-columns:1fr;gap:10px}}
+
+.chart{margin-top:clamp(56px,9vw,110px);background:var(--navy2);border-radius:6px;padding:clamp(24px,4.5vw,56px)}
+.chart-head{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline;margin-bottom:36px}
+.chart-head h3{font-size:clamp(20px,3vw,28px);font-weight:900;letter-spacing:-.03em;line-height:1.35}
+.chart-head span{font-size:13px;color:var(--sub-navy)}
+.bar-row{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center;padding:18px 0;border-top:1px solid rgba(255,255,255,.08)}
+.bar-row.r1{border-top:0}
+.bar-name b{display:block;font-size:17px}
+.bar-name span{font-size:13px;color:var(--sub-navy);line-height:1.5;display:block}
+.bar-track{position:relative;height:46px;display:flex;align-items:center}
+.bar{height:100%;border-radius:3px;background:rgba(238,241,246,.86);transform-origin:0 50%;position:relative;min-width:6px}
+.bar .range{position:absolute;right:0;top:0;bottom:0;background:repeating-linear-gradient(135deg,rgba(238,241,246,.86) 0 6px,rgba(238,241,246,.35) 6px 12px);border-radius:0 3px 3px 0}
+.bar.hl{background:var(--accent-navy)}
+.bar-val{margin-left:16px;font-family:var(--serif);font-size:clamp(28px,4vw,44px);line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar-val.hl{color:var(--accent-navy)}
+.chart-foot{margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);font-size:clamp(17px,2.2vw,21px);font-weight:700;line-height:1.55}
+.chart-foot em{font-style:normal;color:var(--accent-navy)}
+.legend{display:flex;gap:16px;margin-top:14px;font-size:12px;color:var(--sub-navy);flex-wrap:wrap}
+.legend i{display:inline-block;width:18px;height:10px;margin-right:6px;vertical-align:-1px;border-radius:2px;background:rgba(238,241,246,.86)}
+.legend i.r{background:repeating-linear-gradient(135deg,rgba(238,241,246,.86) 0 4px,rgba(238,241,246,.35) 4px 8px)}
+@media (max-width:640px){
+  .bar-row{grid-template-columns:1fr;gap:10px}
+  .bar-track{height:34px}
+}
+
+.ba{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ba-card{border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:24px}
+.ba-card h4{font-size:14px;color:var(--sub-navy);font-weight:700}
+.ba-card .from{margin-top:18px;font-size:15px;color:var(--sub-navy);text-decoration:line-through;text-decoration-color:rgba(169,180,198,.5)}
+.ba-card .to{font-family:var(--serif);font-size:clamp(32px,4vw,42px);line-height:1.15;margin-top:2px}
+.ba-card .to small{font-family:var(--sans);font-size:15px;font-weight:700;margin-left:4px}
+@media (max-width:820px){.ba{grid-template-columns:1fr}}
+
+.how{margin-top:clamp(80px,12vw,150px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,88px)}
+.how-side{position:sticky;top:120px;align-self:start}
+.how-side .h2{font-size:clamp(30px,5vw,54px)}
+.how-side .h2 span{display:block}
+.how-side p{margin-top:20px;color:var(--sub-navy)}
+.how-count{margin-top:36px;font-family:var(--serif);font-size:64px;line-height:1;color:var(--accent-navy)}
+.how-count small{font-size:24px;color:var(--sub-navy)}
+.steps{list-style:none;margin:0;padding:0}
+.step{position:relative;padding:34px 0 34px 0;border-top:1px solid rgba(255,255,255,.14)}
+.step::before{content:"";position:absolute;left:-22px;top:38px;bottom:38px;width:2px;background:var(--accent-navy);transform:scaleY(0);transform-origin:top;transition:transform .6s var(--ease)}
+.step.on::before{transform:scaleY(1)}
+.step:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.step .tag{font-size:13px;font-weight:700;color:var(--accent-navy);letter-spacing:.06em}
+.step h4{font-size:clamp(21px,2.8vw,27px);font-weight:900;letter-spacing:-.03em;margin-top:6px;line-height:1.35}
+.step p{margin-top:10px;color:var(--sub-navy);font-size:16px}
+.step p b{color:var(--on-navy)}
+@media (max-width:820px){.how{grid-template-columns:1fr}.how-side{position:static}.how-count{display:none}.step::before{display:none}}
+
+.extras{margin-top:56px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.extras span.t{font-size:14px;color:var(--sub-navy);margin-right:6px}
+.extras .chip{background:transparent;border-color:rgba(255,255,255,.2);color:var(--on-navy)}
+.notes{margin-top:28px;font-size:13px;color:var(--sub-navy);line-height:1.7}
+
+/* meta channel */
+.channel{padding:clamp(64px,10vw,120px) 0 0}
+.channel-card{border:1px solid var(--line);background:#fff;border-radius:8px;padding:clamp(28px,5vw,60px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,64px)}
+.channel-card .label{margin-bottom:22px}
+.channel-card h3{font-size:clamp(26px,4.4vw,42px);line-height:1.3;font-weight:900;letter-spacing:-.04em}
+.channel-card .org{margin-top:16px;font-size:14px;color:var(--sub)}
+.loop{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.loop li{display:grid;grid-template-columns:72px 1fr;gap:14px;padding:20px 0;border-top:1px solid var(--line)}
+.loop li:first-child{border-top:0;padding-top:4px}
+.loop b{font-size:15px;font-weight:900;color:var(--accent)}
+.loop p{font-size:16px}
+.channel-foot{grid-column:1/-1;border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:16px 28px;flex-wrap:wrap;align-items:center}
+.channel-foot p{font-weight:700;font-size:clamp(16px,2vw,18px)}
+.channel-foot .chips{margin-top:0}
+@media (max-width:820px){.channel-card{grid-template-columns:1fr}.loop li{grid-template-columns:56px 1fr}}
+
+/* selected work */
+.work-intro{margin-top:28px;max-width:720px}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center;margin-top:clamp(72px,11vw,140px)}
+.proj:nth-of-type(even) .proj-media{order:2}
+.proj-media{border-radius:6px;overflow:hidden;background:var(--bg2);position:relative}
+.proj-media img{width:100%;height:100%;object-fit:cover}
+.media-news{background:#7DBB82}
+.media-bbq{background:#111;padding:clamp(16px,3vw,28px)}
+.media-bbq img{border-radius:3px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag-s{font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;background:var(--ink);color:var(--bg);letter-spacing:.02em}
+.tag-s.o{background:transparent;color:var(--sub);border:1px solid var(--line);font-weight:500}
+.proj h3{font-size:clamp(26px,3.8vw,38px);font-weight:900;letter-spacing:-.04em;line-height:1.3;margin-top:16px}
+.kpis{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap}
+.kpi .n{font-family:var(--serif);font-size:clamp(44px,5.6vw,62px);line-height:1;color:var(--accent);white-space:nowrap}
+.kpi .n small{font-family:var(--sans);font-size:.34em;font-weight:700;color:var(--ink);margin-left:3px}
+.kpi .d{font-size:13px;color:var(--sub);margin-top:6px;line-height:1.5}
+.quote-big{font-size:clamp(28px,4.4vw,44px);font-weight:900;letter-spacing:-.04em;margin-top:22px;color:var(--accent);line-height:1.25}
+.psr{margin-top:26px;display:grid;gap:0;border-top:1px solid var(--line)}
+.psr div{display:grid;grid-template-columns:76px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
+.psr dt,.psr b{font-weight:700;font-size:14px;color:var(--sub);padding-top:2px}
+details.more{margin-top:18px}
+details.more summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:700;font-size:15px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary .pm{width:24px;height:24px;border-radius:50%;border:1px solid var(--ink);display:inline-grid;place-items:center;font-size:15px;line-height:1;transition:transform .3s var(--ease)}
+details.more[open] summary .pm{transform:rotate(45deg)}
+.more-body{padding:8px 0 4px;font-size:15px;color:#333}
+.more-body ul{margin:0;padding-left:18px}
+.more-body li{margin:6px 0}
+.more-body b{color:var(--ink)}
+.exp{margin-top:18px;display:grid;gap:10px}
+.exp-row{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start}
+.exp-row > b{font-size:13px;color:var(--sub);padding-top:6px}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opt{font-size:13px;padding:5px 11px;border-radius:99px;border:1px solid var(--line);color:var(--sub)}
+.opt.win{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.code{margin-top:14px;background:var(--ink);color:#E6E6E6;border-radius:6px;padding:16px 18px;font:13px/1.8 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:auto;white-space:pre}
+.code i{color:#8FA8FF;font-style:normal}
+.gvr{margin-top:16px;display:grid;gap:14px}
+.gvr-row b{font-size:14px;display:block;margin-bottom:6px}
+.gvr-bars{display:grid;gap:5px}
+.gbar{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--sub)}
+.gbar i{display:block;height:12px;border-radius:2px;background:var(--line);min-width:4px}
+.gbar.r i{background:var(--accent)}
+.gbar.r{color:var(--ink);font-weight:700}
+.films{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 10px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.films figure{flex:0 0 46%;margin:0;scroll-snap-align:start}
+.films img{aspect-ratio:3/4;object-fit:cover;border-radius:4px;width:100%;background:#222}
+.films a{text-decoration:none;display:block}
+.films a:hover img{transform:scale(1.02)}
+.films img{transition:transform .5s var(--ease)}
+.films figcaption{font-size:13px;color:var(--ink);font-weight:700;margin-top:8px;min-height:24px}
+.film-links,.item-links{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:10px}
+.film-links a,.item-links a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.item-links{margin-top:6px}
+.media-film{background:var(--bg2);padding:clamp(16px,3vw,24px)}
+.film-hint{font-size:12px;color:var(--sub);margin-top:4px}
+.voices{margin-top:22px;display:grid;gap:10px}
+.voice{background:#fff;border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:12px 16px;font-size:15px;line-height:1.55;max-width:460px}
+.voice-cap{font-size:12px;color:var(--sub)}
+@media (max-width:820px){
+  .proj{grid-template-columns:1fr}
+  .proj:nth-of-type(even) .proj-media{order:0}
+  .films figure{flex-basis:62%}
+}
+
+/* more work */
+.list{margin-top:44px;border-top:1px solid var(--ink)}
+.item{border-bottom:1px solid var(--line)}
+.item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:110px 1fr auto 32px;gap:18px;align-items:center;min-height:76px;padding:14px 0}
+.item summary::-webkit-details-marker{display:none}
+.item .yr{font-family:var(--serif);font-size:20px;color:var(--sub);font-style:italic}
+.item .ti b{display:block;font-size:clamp(17px,2.2vw,20px);font-weight:700;letter-spacing:-.02em;line-height:1.4}
+.item .ti span{font-size:14px;color:var(--sub);line-height:1.5;display:block}
+.item .badge{font-size:12px;font-weight:700;padding:5px 11px;border-radius:99px;border:1px solid var(--ink);white-space:nowrap}
+.item .pm{width:28px;height:28px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:transform .3s var(--ease),background .3s}
+.item[open] .pm{transform:rotate(45deg);background:var(--ink);color:var(--bg)}
+.item:hover .ti b{color:var(--accent)}
+.item-body{display:grid;grid-template-columns:110px 1fr 220px;gap:18px;padding:0 0 26px}
+.item-body p{grid-column:2;font-size:16px;color:#333;max-width:620px}
+.item-body img{grid-column:3;border-radius:4px;aspect-ratio:4/3;object-fit:cover;width:100%}
+@media (max-width:760px){
+  .item summary{grid-template-columns:1fr 28px;gap:4px 12px;padding:16px 0}
+  .item .yr{grid-column:1;font-size:15px}
+  .item .ti{grid-column:1}
+  .item .badge{grid-column:1;justify-self:start;margin-top:6px}
+  .item .pm{grid-column:2;grid-row:1/span 3;align-self:center}
+  .item-body{grid-template-columns:1fr}
+  .item-body p,.item-body img{grid-column:1}
+  .item-body img{max-width:320px}
+}
+
+/* about */
+.qs{margin-top:44px;display:grid;gap:0}
+.q{font-size:clamp(24px,4.4vw,46px);font-weight:900;letter-spacing:-.04em;line-height:1.3;padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:64px 1fr;gap:10px}
+.q .serif{color:var(--accent);font-style:italic;font-weight:400;font-size:.8em;padding-top:.08em}
+.q-intro{margin-top:24px}
+.reasons{margin-top:clamp(64px,9vw,110px);display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.reason{background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px}
+.reason .serif{font-size:40px;color:var(--accent);line-height:1;font-style:italic}
+.reason h4{font-size:20px;font-weight:900;letter-spacing:-.03em;margin-top:16px;line-height:1.4}
+.reason p{margin-top:10px;font-size:15px;color:var(--sub)}
+.offclock{margin-top:clamp(64px,9vw,110px);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.offclock img{width:120px;height:120px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.offclock p{font-size:clamp(19px,2.6vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.55}
+.offclock p span{display:block;font-size:15px;color:var(--sub);font-weight:400;margin-top:6px}
+@media (max-width:820px){.reasons{grid-template-columns:1fr}.q{grid-template-columns:44px 1fr}.offclock{grid-template-columns:1fr}.offclock img{width:84px;height:84px}}
+.marquee{margin-top:40px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-in{display:flex;gap:44px;width:max-content;animation:mq 26s linear infinite}
+.marquee-in span{font-family:var(--serif);font-size:30px;font-style:italic;color:var(--sub);white-space:nowrap}
+.marquee-in span b{font-family:var(--sans);font-style:normal;font-size:13px;color:var(--ink);font-weight:700;margin-right:10px;letter-spacing:.08em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* experience */
+.tl{margin-top:44px;position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.tl-line{position:absolute;left:5px;top:6px;width:1px;background:var(--ink);height:calc(100% - 12px);transform-origin:top}
+.tl-item{position:relative;display:grid;grid-template-columns:180px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.tl-item::before{content:"";position:absolute;left:-28px;top:27px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--ink)}
+.tl-item.main::before{background:var(--accent);border-color:var(--accent)}
+.tl-item .when{font-size:14px;color:var(--sub);font-variant-numeric:tabular-nums;padding-top:3px}
+.tl-item .when small{display:block;font-size:12px}
+.tl-item h4{font-size:19px;font-weight:900;letter-spacing:-.02em}
+.tl-item h4 span{font-weight:500;color:var(--sub);font-size:15px;margin-left:8px}
+.tl-item p{font-size:15px;color:#333;margin-top:2px}
+@media (max-width:640px){.tl-item{grid-template-columns:1fr;gap:2px}.tl-item h4 span{display:block;margin-left:0}}
+.sub-h{font-size:14px;font-weight:700;letter-spacing:.1em;color:var(--sub);margin-top:56px}
+.edu{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px}
+.edu div{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.edu div b{font-family:var(--serif);font-weight:400;font-size:18px;color:var(--sub);font-style:italic}
+@media (max-width:760px){.edu{grid-template-columns:1fr}}
+.skills{margin-top:14px;display:grid;gap:0}
+.skills div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.skills div > b{font-size:14px;color:var(--sub)}
+.skills .chips{margin-top:0}
+.skills .chip{background:#fff}
+@media (max-width:640px){.skills div{grid-template-columns:1fr;gap:8px}}
+
+/* contact */
+.contact{padding:clamp(100px,15vw,190px) 0 40px}
+.contact .big{font-size:clamp(40px,9vw,108px);font-weight:900;letter-spacing:-.05em;line-height:1.12;margin-top:36px}
+.contact .big em{font-style:normal;color:var(--accent-navy)}
+.contact .lead{margin-top:28px}
+.mail{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.mail .addr{font-family:var(--serif);font-size:clamp(28px,4.4vw,44px);color:var(--on-navy)}
+.copy{min-height:44px;padding:0 18px;border-radius:99px;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--on-navy);font:700 14px var(--sans);cursor:pointer}
+.copy:hover{border-color:var(--on-navy)}
+.foot{margin-top:clamp(90px,12vw,150px);padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--sub-navy)}
+.foot a{min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:var(--on-navy);font-weight:700}
+
+/* sticky mobile CTA */
+.sticky-cta{position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:40;display:none;transform:translateY(140%);transition:transform .45s var(--ease)}
+.sticky-cta.show{transform:none}
+.sticky-cta a{display:flex;justify-content:center;align-items:center;gap:10px;min-height:54px;border-radius:99px;background:var(--ink);color:var(--bg);font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+@media (max-width:760px){.sticky-cta{display:block}}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:99px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:all .35s var(--ease);z-index:80}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* reveal (JS only) */
+.anim [data-r]{opacity:0;transform:translateY(28px)}
+@media (max-width:760px){.anim [data-r]{transform:translateY(14px)}}
+@media (prefers-reduced-motion:reduce){
+  .marquee-in,.scroll-cue i{animation:none}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <nav class="wrap nav" aria-label="주요 메뉴">
+    <a class="brand" href="#hero">KANG DONGWOOK</a>
+    <ul>
+      <li><a href="#case">Case</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="cta-mini" href="#contact">연락하기</a></li>
+    </ul>
+    <button class="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="메뉴">
+  <button class="close" aria-label="메뉴 닫기">×</button>
+  <a href="#case"><span class="serif">01</span>대표 성과</a>
+  <a href="#work"><span class="serif">02</span>프로젝트</a>
+  <a href="#about"><span class="serif">04</span>일하는 방식</a>
+  <a href="#contact"><span class="serif">06</span>연락하기</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="m-avatar"><img src="img/profile.jpg" alt="강동욱 프로필 사진" width="56" height="56"><span>강동욱<b>PERFORMANCE MARKETER</b></span></div>
+      <p class="eyebrow" data-h><span class="dot"></span>PERFORMANCE MARKETER · 2Y 3M</p>
+      <h1>
+        <span class="ln"><span>브랜딩을 그리고,</span></span>
+        <span class="ln"><span>데이터를 쓰는</span></span>
+        <span class="ln"><span>마케터 <em>강동욱</em>입니다.</span></span>
+      </h1>
+      <p class="sub" data-h>네이버 검색광고와 메타 광고를 운영하고, GA4·GTM으로 성과를 직접 측정합니다. 예산을 키워도 효율이 무너지지 않는 구조를 만듭니다.</p>
+      <div class="chips" data-h><span class="chip">네이버 검색광고</span><span class="chip">Meta 광고</span><span class="chip">GA4 · GTM</span><span class="chip">바이럴</span></div>
+
+      <div class="hero-stats" data-h>
+        <div class="stat"><div class="num"><span data-count="5">5</span><small>배</small></div><div class="k">월 광고비 확대</div><div class="v">2,000만 → 최대 1억 원</div></div>
+        <div class="stat"><div class="num">+<span data-count="9">9</span><small>%</small></div><div class="k">CPA 상승은 여기까지</div><div class="v">54,000 → 59,000원</div></div>
+        <div class="stat"><div class="num"><span data-count="4">4</span><small>배+</small></div><div class="k">같은 효율로 늘린 DB</div><div class="v">월 약 370 → 1,500~1,700건</div></div>
+      </div>
+
+      <div class="hero-actions" data-h>
+        <a class="btn" href="mailto:tasadaz@naver.com">이메일 보내기</a>
+        <a class="link-arrow" href="#case">대표 성과 보기 ↓</a>
+      </div>
+    </div>
+    <div class="portrait-col" data-h>
+      <figure class="portrait" style="margin:0"><img src="img/profile.jpg" alt="강동욱 프로필 사진" width="560" height="747"><figcaption>KANG DONGWOOK</figcaption></figure>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">SCROLL<i></i></div>
+</section>
+
+<!-- CASE 01 -->
+<section class="dark sec" id="case" data-dark>
+  <div class="wrap">
+    <div class="case-open">
+      <p class="label" data-r><span class="no">01</span>Case Study</p>
+      <h2 class="h2" data-r>광고비는 5배 늘었지만,<br><em>CPA는 9%만</em> 올랐습니다.</h2>
+      <div class="meta-line" data-r><span><b>보험닷컴</b> 퍼포먼스 마케터</span><span>네이버 파워링크 · 파워컨텐츠</span><span>2024.10 – 2026.08</span></div>
+    </div>
+
+    <div class="why" data-r>
+      <h3>왜 어려운 일이었나</h3>
+      <p>검색광고는 예산을 늘릴수록 상위 노출 경쟁이 붙고, 전환 의도가 낮은 검색어까지 노출이 넓어집니다. 그래서 보통은 <b>예산이 커지면 CPA도 같이 오릅니다.</b></p>
+    </div>
+
+    <div class="chart" data-r id="chart">
+      <div class="chart-head">
+        <h3>운영 초기 대비 증가율</h3>
+        <span>월 기준 · 입사 초부터 퇴사 때까지 단계적으로 증액</span>
+      </div>
+      <div class="bar-row r1">
+        <div class="bar-name"><b>월 광고비</b><span>2,000만 → 9,000만~1억 원</span></div>
+        <div class="bar-track"><div class="bar" style="width:calc((100% - 150px) * 1)" data-bar><span class="range" style="width:12.5%"></span></div><span class="bar-val">+350~400%</span></div>
+      </div>
+      <div class="bar-row r2">
+        <div class="bar-name"><b>월 DB 획득량</b><span>약 370 → 1,500~1,700건</span></div>
+        <div class="bar-track"><div class="bar" style="width:calc((100% - 150px) * .9)" data-bar><span class="range" style="width:13.9%"></span></div><span class="bar-val">+310~360%</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name"><b>CPA</b><span>54,000 → 59,000원</span></div>
+        <div class="bar-track"><div class="bar hl" style="width:calc((100% - 150px) * .0225)" data-bar></div><span class="bar-val hl">+9%</span></div>
+      </div>
+      <div class="legend" aria-hidden="true"><span><i></i>최소치</span><span><i class="r"></i>범위(최대치까지)</span></div>
+      <p class="chart-foot">광고비 약 5배 ↔ CPA 1.09배.<br>같은 효율로 <em>DB 볼륨을 4배 이상</em> 키웠습니다.</p>
+    </div>
+
+    <div class="ba">
+      <div class="ba-card" data-r><h4>월 광고비</h4><p class="from">2,000만 원</p><p class="to">9,000만~1억<small>원</small></p></div>
+      <div class="ba-card" data-r><h4>CPA · DB 1건 획득 비용</h4><p class="from">54,000원</p><p class="to">59,000<small>원</small></p></div>
+      <div class="ba-card" data-r><h4>월 DB 획득량 (산출)</h4><p class="from">약 370건</p><p class="to">1,500~1,700<small>건</small></p></div>
+    </div>
+
+    <div class="how" id="how">
+      <div class="how-side">
+        <p class="label" data-r>How</p>
+        <h3 class="h2" data-r style="margin-top:24px"><span>쪼개고,</span><span>확인하고,</span><span>넓혔습니다.</span></h3>
+        <p data-r>예산을 늘리기 전에, 운영 구조부터 다졌습니다.</p>
+        <p class="how-count" aria-hidden="true"><span id="howNo">01</span><small> / 05</small></p>
+      </div>
+      <ol class="steps">
+        <li class="step"><p class="tag">STEP 01 · 쪼개기</p><h4>키워드 구조 세분화</h4><p>대표 키워드 중심이던 구조를 보험 종류·검색 상황별 세부 키워드 <b>약 1,000개</b>로 나눴습니다. 키워드별 DB 데이터로 잘 되는 그룹과 안 되는 그룹을 구분했습니다.</p></li>
+        <li class="step"><p class="tag">STEP 02 · 확인하기</p><h4>실제 DB 기준으로 입찰 조정</h4><p>매체 전환값이 아니라 <b>실제 상담 DB</b>를 기준으로 1,000여 개 키워드를 하나하나 계속 확인했습니다. 잘 되는 키워드는 순위를 지키고, 안 되는 키워드는 입찰을 낮추거나 껐습니다.</p></li>
+        <li class="step"><p class="tag">STEP 03 · 넓히기</p><h4>파워컨텐츠를 검색 의도에 맞게 개편</h4><p>기존 파워컨텐츠를 키워드별로 나누고, 그 검색어를 입력한 사람이 궁금해할 내용에 맞춰 다시 손봤습니다. 경쟁이 치열한 대표 키워드 의존도를 낮추고 새 유입을 만들었습니다.</p></li>
+        <li class="step"><p class="tag">STEP 04 · 바꾸기</p><h4>ChatGPT로 문구·소재 상시 교체</h4><p>늘어난 키워드마다 검색 의도에 맞는 광고 문구와 소재를 <b>ChatGPT</b>로 빠르게 만들고, 성과를 보며 계속 바꿨습니다.</p></li>
+        <li class="step"><p class="tag">STEP 05 · 키우기</p><h4>검증된 곳부터 단계적 증액</h4><p>효율이 확인된 키워드 그룹부터 예산을 늘렸습니다. 증액 후 CPA가 기준을 넘으면 바로 입찰을 다시 조정했습니다.</p></li>
+      </ol>
+    </div>
+
+    <div class="extras" data-r><span class="t">함께 맡은 일</span><span class="chip">카페 키워드 바이럴</span><span class="chip">블로그 인플루언서 섭외</span><span class="chip">공식 블로그 운영</span><span class="chip">월 예산 증액 계획</span></div>
+    <p class="notes" data-r>* CPA는 사내 DB 집계 기준입니다(매체 전환값 아님).<br>* 월 DB 획득량 = 월 광고비 ÷ CPA로 산출했습니다.</p>
+  </div>
+</section>
+
+<!-- CHANNEL META -->
+<section class="channel" aria-labelledby="meta-h">
+  <div class="wrap">
+    <div class="channel-card" data-r>
+      <div>
+        <p class="label">Channel — Meta Ads</p>
+        <h3 id="meta-h">검색광고만 하지 않습니다.<br>메타 광고도 직접 운영합니다.</h3>
+        <p class="org">닥터웰 마케팅팀 · 메타 중심 퍼포먼스 마케팅 · 2024.01 – 2024.04</p>
+      </div>
+      <ol class="loop">
+        <li><b>세팅</b><p>광고마다 UTM을 붙여, 어떤 소재가 실제로 사람을 데려오는지 추적했습니다.</p></li>
+        <li><b>측정</b><p>매체 리포트만 보지 않고, GA4에서 실제 전환 데이터를 확인하며 성과를 개선했습니다.</p></li>
+        <li><b>소재</b><p>디자인팀과 협업하거나 AI로 소재를 빠르게 만들고, 카피와 소재를 바꿔 가며 테스트했습니다.</p></li>
+      </ol>
+      <div class="channel-foot">
+        <p>검색 의도를 잡는 검색광고, 관심을 만드는 메타 광고.<br class="m-only"> 두 매체의 역할을 알고 운영합니다.</p>
+        <div class="chips"><span class="chip">대행사 커뮤니케이션</span><span class="chip">카페 바이럴</span><span class="chip">체험단</span><span class="chip">보도자료</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section class="sec" id="work">
+  <div class="wrap">
+    <p class="label" data-r><span class="no">02</span>Selected Work</p>
+    <h2 class="h2 work-intro" data-r>숫자만 다루는<br class="m-only"> 마케터는 아닙니다.</h2>
+    <p class="lead" data-r style="margin-top:18px;max-width:640px">측정을 직접 심고, 채널을 처음부터 만들고, 브랜드를 쌓아 봤습니다.</p>
+
+    <!-- W1 -->
+    <article class="proj">
+      <div class="proj-media media-news" data-r><img src="img/news-mockup.jpg" alt="초록색 '마케터 일잘몰러' 뉴스레터 랜딩페이지를 노트북·태블릿·휴대폰에 띄운 목업" width="1600" height="1067" loading="lazy"></div>
+      <div>
+        <div class="tags" data-r><span class="tag-s">데이터 세팅</span><span class="tag-s">그로스</span><span class="tag-s o">팀 프로젝트 · 5인</span></div>
+        <h3 data-r>마케터 일잘몰러<br>뉴스레터를 0부터 키운 실험</h3>
+        <div class="kpis" data-r>
+          <div class="kpi"><div class="n"><span data-count="490">490</span><small>명</small></div><div class="d">구독자 · 목표 100명의 약 5배<br>동기수 평균의 300%</div></div>
+          <div class="kpi"><div class="n"><span data-count="40">40</span><small>%</small></div><div class="d">CVR · 목표 10%의 4배<br>동기수 평균의 400%</div></div>
+        </div>
+        <dl class="psr" data-r>
+          <div><dt>문제</dt><dd style="margin:0">마케터를 위한 뉴스레터는 이미 많았습니다.</dd></div>
+          <div><dt>한 일</dt><dd style="margin:0">타겟을 '마케터 취준생'으로 좁히고 "일기장 훔쳐보기" 콘셉트를 잡았습니다. 저는 GTM 태그·트리거 설계와 광고 성과 분석을 맡았습니다.</dd></div>
+          <div><dt>결과</dt><dd style="margin:0">구독자 490명, CVR 40%. 광고 실험 1·2차 모두 재미+공감형 소재가 이겼습니다.</dd></div>
+          <div><dt>배운 점</dt><dd style="margin:0">측정을 먼저 설계하면 실험이 빨라집니다.</dd></div>
+        </dl>
+        <details class="more" data-r>
+          <summary><span class="pm" aria-hidden="true">+</span>자세히 보기</summary>
+          <div class="more-body">
+            <ul>
+              <li><b>배경</b> — 그로스 마케팅 부트캠프에서 서비스 기획부터 실제 예산 집행, 효율 개선까지 약 13주 동안 진행한 프로젝트</li>
+              <li><b>콘텐츠</b> — 현직 선배 인터뷰 '껄껄껄'(이렇게 할 껄 / 이렇게 하지 말 껄 / 너도 이제 겪을 껄), 마케팅 MBTI, 마케팅 능력고사, 트렌드 사례 심층 탐구</li>
+              <li><b>랜딩페이지</b> — 편안한 초록 메인 컬러, '구독하기' 대신 '일기장 훔쳐보기' 버튼으로 구독 장벽을 낮춤</li>
+              <li><b>내 역할</b> — GTM 태그·트리거 설정, 광고 성과 분석과 개선, 도메인 구매와 웹빌더 연결</li>
+            </ul>
+            <div class="exp">
+              <div class="exp-row"><b>1차</b><div class="opts"><span class="opt">정보형</span><span class="opt">정보+재미형</span><span class="opt win">재미+공감형 승</span></div></div>
+              <div class="exp-row"><b>2차</b><div class="opts"><span class="opt">스토리·릴스 맞춤</span><span class="opt">카카오톡 대화형 영상</span><span class="opt win">재미+공감형 또 승</span></div></div>
+            </div>
+            <div class="code" aria-label="GTM 트리거 목록"><i>// GTM 트리거</i>
+page_view        각 페이지 방문
+click_diary      '일기장 훔쳐보기' 버튼
+click_instagram  인스타그램 링크
+scroll_depth     스크롤
+meta_click       메타 광고 유입 후 버튼 클릭
+pixel_init       픽셀 설치</div>
+            <p style="margin-top:12px;font-size:13px;color:var(--sub)">GA4 · GTM · Meta Pixel · Imweb · Stibee</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- W2 -->
+    <article class="proj">
+      <div class="proj-media media-bbq" data-r><img src="img/bbq-feed.jpg" alt="BBQ 롤파크 빌지워터 인스타그램 피드 — 승부예측 이벤트, 그랜드 오픈, D-1 게시물" width="628" height="628" loading="lazy"></div>
+      <div>
+        <div class="tags" data-r><span class="tag-s">SNS 기획·운영</span><span class="tag-s">협업</span><span class="tag-s o">스카이벤쳐스 AE 인턴 · 기여도 100%</span></div>
+        <h3 data-r>BBQ X LCK<br>제안부터 운영까지, 새 인스타그램 채널</h3>
+        <div class="kpis" data-r>
+          <div class="kpi"><div class="n"><span data-count="1000">1,000</span><small>명</small></div><div class="d">팔로워 · 약 3주 만에<br>목표 500명의 2배</div></div>
+          <div class="kpi"><div class="n"><span data-count="33">33</span><small>배</small></div><div class="d">도달 33,000명<br>목표 100명 대비</div></div>
+        </div>
+        <dl class="psr" data-r>
+          <div><dt>문제</dt><dd style="margin:0">BBQ는 LoL이 아니라 LCK의 후원사라, 쓸 수 있는 IP가 제한적이었습니다.</dd></div>
+          <div><dt>한 일</dt><dd style="margin:0">롤파크 매장 홍보를 넘어 LCK 팬과 소통하는 채널을 직접 제안해 채택됐습니다. IP 제약은 팬이 직접 참여하는 승부 예측, 인증샷 이벤트, 롤파크 전용 메뉴로 풀었습니다.</dd></div>
+          <div><dt>결과</dt><dd style="margin:0">약 3주 만에 팔로워 1,000명, 도달 33,000명.</dd></div>
+          <div><dt>배운 점</dt><dd style="margin:0">BBQ, 디자이너, 영상 PD, LCK 대행사처럼 이해관계가 다른 사람들을 한 방향으로 모으는 법.</dd></div>
+        </dl>
+        <details class="more" data-r>
+          <summary><span class="pm" aria-hidden="true">+</span>목표 대비 성과 보기</summary>
+          <div class="more-body">
+            <p>3월 목표 KPI: 콘텐츠 15회 업로드 · 팔로워 500명 · 게시글 도달 100명 · 스폰서드 광고 월 100만 원 집행</p>
+            <div class="gvr">
+              <div class="gvr-row"><b>팔로워</b><div class="gvr-bars"><span class="gbar"><i style="width:50%"></i>목표 500</span><span class="gbar r"><i style="width:100%"></i>1,000</span></div></div>
+              <div class="gvr-row"><b>도달</b><div class="gvr-bars"><span class="gbar"><i style="width:1%"></i>목표 100</span><span class="gbar r"><i style="width:100%"></i>33,000</span></div></div>
+            </div>
+            <p style="margin-top:14px"><a class="link-arrow" href="https://www.instagram.com/bbq_lolpark_bilgewater/" target="_blank" rel="noopener">@bbq_lolpark_bilgewater 보러 가기 ↗</a></p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- W3 -->
+    <article class="proj">
+      <div class="proj-media media-film" data-r>
+        <div class="films" tabindex="0" aria-label="영화 리뷰 게시물 모음, 옆으로 넘겨 보세요">
+          <figure><a href="https://www.facebook.com/smallreview/posts/903085210360098" target="_blank" rel="noopener"><img src="img/film-2.jpg" alt="스파이더맨: 노 웨이 홈 리뷰 게시물" loading="lazy" width="451" height="449"><figcaption>스파이더맨: 노 웨이 홈 <span aria-hidden="true">↗</span></figcaption></a></figure>
+          <figure><a href="https://www.facebook.com/smallreview/posts/835752903759996" target="_blank" rel="noopener"><img src="img/film-5.jpg" alt="D.P. 리뷰 게시물" loading="lazy" width="453" height="449"><figcaption>D.P. <span aria-hidden="true">↗</span></figcaption></a></figure>
+          <figure><a href="https://www.facebook.com/smallreview/posts/849803232354963" target="_blank" rel="noopener"><img src="img/film-3.jpg" alt="미나리 리뷰 게시물" loading="lazy" width="401" height="573"><figcaption>미나리 <span aria-hidden="true">↗</span></figcaption></a></figure>
+          <figure><a href="https://www.facebook.com/smallreview/posts/852257862109500" target="_blank" rel="noopener"><img src="img/film-1.jpg" alt="오징어 게임 리뷰 게시물" loading="lazy" width="401" height="592"><figcaption>오징어 게임 <span aria-hidden="true">↗</span></figcaption></a></figure>
+          <figure><a href="https://www.facebook.com/smallreview/posts/880223102646309" target="_blank" rel="noopener"><img src="img/film-4.jpg" alt="이터널스 리뷰 게시물" loading="lazy" width="449" height="450"><figcaption>이터널스 <span aria-hidden="true">↗</span></figcaption></a></figure>
+        </div>
+        <p class="film-hint">옆으로 넘겨 보세요 → 포스터를 누르면 실제 리뷰 게시물로 이동합니다.</p>
+        <div class="film-links"><a href="https://www.facebook.com/smallreview/posts/966126127389339" target="_blank" rel="noopener">최선의 삶 리뷰 ↗</a><a href="https://www.facebook.com/smallreview/posts/817823695552917" target="_blank" rel="noopener">영화계 소식 ↗</a><a href="https://www.facebook.com/smallreview" target="_blank" rel="noopener">페이지 전체 보기 ↗</a></div>
+      </div>
+      <div>
+        <div class="tags" data-r><span class="tag-s">브랜딩</span><span class="tag-s">콘텐츠</span><span class="tag-s o">개인 운영 · 기여도 100%</span></div>
+        <h3 data-r>소소한 영화덕후 '소영'<br>믿고 보는 리뷰로 쌓은 브랜드</h3>
+        <p class="quote-big" data-r>"쉽지만 가볍지 않게."</p>
+        <dl class="psr" data-r>
+          <div><dt>문제</dt><dd style="margin:0">줄거리 요약에 한 줄 소감, "연출이 좋다" 같은 추상적인 리뷰가 너무 많았습니다.</dd></div>
+          <div><dt>한 일</dt><dd style="margin:0">어려운 말은 풀고, 추상적인 표현은 구체적으로 바꿨습니다. 개봉작을 가장 먼저 리뷰하고, 시상식 예측 같은 이벤트로 팔로워와 대화했습니다.</dd></div>
+          <div><dt>결과</dt><dd style="margin:0">팔로워가 꾸준히 늘었고, "믿고 보는 페이지"라는 신뢰가 생겼습니다.</dd></div>
+          <div><dt>배운 점</dt><dd style="margin:0">브랜드는 광고보다, 쌓인 콘텐츠의 일관성에서 나옵니다.</dd></div>
+        </dl>
+        <div class="voices" data-r>
+          <p class="voice">영화리뷰=소영 믿고 본다 👍</p>
+          <p class="voice">리뷰가 군더더기 없이 깔끔하고 공감이 되네요!! 늘 잘 보고 있습니다</p>
+          <p class="voice-cap">— 실제 팔로워 댓글과 페이지 추천 글</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- MORE WORK -->
+<section class="sec" style="padding-top:0" aria-labelledby="more-h">
+  <div class="wrap">
+    <p class="label" data-r><span class="no">03</span>More Work</p>
+    <h2 class="h2" id="more-h" data-r style="margin-top:24px">그 밖에 해 온 일</h2>
+    <div class="list" data-r>
+      <details class="item">
+        <summary><span class="yr">2023</span><span class="ti"><b>명지대 마케팅 학회 IM — GA4·GTM 강의</b><span>학회원들이 직접 설치하고 실습하는 3주 강의</span></span><span class="badge">3주 강의</span><span class="pm" aria-hidden="true">+</span></summary>
+        <div class="item-body"><p>티스토리 블로그에 GA4와 GTM을 직접 심어 보는 실습형 강의를 진행했습니다. 1주차 GA4 설치, 2주차 보고서·디버거·맞춤 이벤트, 3주차 GTM 클릭·스크롤 이벤트와 탐색 보고서까지 다뤘습니다.</p><img src="img/lecture.jpg" alt="GA4 강의를 진행하는 모습" loading="lazy" width="720" height="540"></div>
+      </details>
+      <details class="item">
+        <summary><span class="yr">2019–20</span><span class="ti"><b>스튜디오 일기당천 편집PD</b><span>지자체·협회 홍보영상 편집, 촬영 보조</span></span><span class="badge">1년 1개월</span><span class="pm" aria-hidden="true">+</span></summary>
+        <div class="item-body"><p>마케팅과 영상이 점점 가까워지는 걸 보고 편집을 따로 배워 프로덕션에 들어갔습니다. 남해 바래길 홍보영상 공모전에서 2등을 했습니다. 영상이 어떻게 만들어지는지 알기에, 디자인팀·영상팀과 말이 잘 통합니다.</p><img src="img/studio.jpg" alt="촬영 스튜디오가 보이는 모니터" loading="lazy" width="900" height="637"></div>
+      </details>
+      <details class="item">
+        <summary><span class="yr">2022</span><span class="ti"><b>위글 마케팅 인턴</b><span>숏폼 커머스 앱의 체험단·기획전</span></span><span class="badge">체험단 약 200명</span><span class="pm" aria-hidden="true">+</span></summary>
+        <div class="item-body"><p>판매자가 올린 숏폼 영상을 보고 바로 구매하는 숏폼 커머스 앱(현재 서비스 종료)에서 일했습니다. 약 200명 규모의 체험단을 모집하고 운영했고, 가을 캠핑처럼 시즌에 맞춘 앱 안의 기획전을 기획했습니다.</p></div>
+      </details>
+      <details class="item">
+        <summary><span class="yr">2022</span><span class="ti"><b>BBQ 대학생 봉사단 '올리버스' 운영</b><span>4개 팀 20명, 매월 정기 봉사</span></span><span class="badge">20명 · 4팀</span><span class="pm" aria-hidden="true">+</span></summary>
+        <div class="item-body"><p>코로나 확산으로 예정된 단체 봉사가 막히자, 인천중구자원봉사센터와 협의해 왕산해수욕장 해안 정화(플로깅)로 바꿔 진행했습니다. 기획·섭외·보도자료·스케치 영상·SNS 운영까지 맡았습니다.<span class="item-links"><a href="https://www.instagram.com/bbq_olive_us/" target="_blank" rel="noopener">인스타그램 ↗</a><a href="https://blog.naver.com/blogbbq/222692513551" target="_blank" rel="noopener">블로그 ↗</a><a href="https://www.youtube.com/watch?v=vdCqWuJTlQg&amp;t=30s" target="_blank" rel="noopener">스케치 영상 ↗</a></span></p><img src="img/beach.jpg" alt="해수욕장에서 해안 정화 활동을 마친 단체 사진" loading="lazy" width="720" height="540"></div>
+      </details>
+      <details class="item">
+        <summary><span class="yr">2021</span><span class="ti"><b>진에어 X 명지대 기업연계 프로젝트</b><span>항공권을 기프티콘으로 선물한다는 아이디어</span></span><span class="badge">팀 5인</span><span class="pm" aria-hidden="true">+</span></summary>
+        <div class="item-body"><p>코로나 이후 지친 사람에게 '짧은 휴식'을 선물하자는 생각에서 출발해, 단거리 노선 중심의 항공권 기프티콘 상품과 유튜브·SNS 댓글 이벤트를 제안했습니다. 아이디어, 자료 조사, 보고서를 맡았습니다.</p><img src="img/jinair.jpg" alt="'진에어 선물' 프로모션 포스터 시안" loading="lazy" width="600" height="849" style="aspect-ratio:3/4"></div>
+      </details>
+      <details class="item">
+        <summary><span class="yr">2019</span><span class="ti"><b>롯데시네마 X 스탠리 큐브릭 기획전 서포터즈</b><span>고전영화 팬을 위한 TMI·리뷰 콘텐츠</span></span><span class="badge">솔직한 회고</span><span class="pm" aria-hidden="true">+</span></summary>
+        <div class="item-body"><p>관람 후 곱씹기를 즐기는 큐브릭 팬에 맞춰 영화 TMI와 리뷰 콘텐츠를 만들었습니다. 반응은 좋았지만, 예매로 이어졌는지는 확인하지 못했습니다. 그때 콘텐츠는 결국 세일즈까지 연결돼야 한다는 걸 배웠습니다.</p><img src="img/kubrick.jpg" alt="STANLEY KUBRICK CINEMA 기획전 포스터" loading="lazy" width="900" height="675"></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="about" style="background:var(--bg2)">
+  <div class="wrap">
+    <p class="label" data-r><span class="no">04</span>How I Work</p>
+    <p class="lead q-intro" data-r>광고뿐 아니라 바이럴과 콘텐츠에도 UTM을 심고, 늘 이렇게 묻습니다.</p>
+    <div class="qs">
+      <p class="q" data-r><span class="serif">Q1</span><span>CTR이 높으면,<br class="m-only"> 정말 전환도 높을까?</span></p>
+      <p class="q" data-r><span class="serif">Q2</span><span>방문자가 많은 블로그라면,<br class="m-only"> 정말 우리 브랜드로 사람을 데려올까?</span></p>
+      <p class="q" data-r><span class="serif">Q3</span><span>고객이 실제로 반응하는<br class="m-only"> 콘텐츠는 무엇일까?</span></p>
+    </div>
+
+    <div class="reasons">
+      <div class="reason" data-r><span class="serif">01</span><h4>예산을 키워도<br>효율을 지킵니다</h4><p>네이버 검색광고 월 광고비 5배 확대, CPA 상승은 9%.</p></div>
+      <div class="reason" data-r><span class="serif">02</span><h4>매체가 달라도<br>숫자로 확인합니다</h4><p>검색광고와 메타 광고 모두 UTM·픽셀·GA4로 실제 전환을 추적합니다. GA4·GTM을 직접 가르쳐 본 경험도 있습니다.</p></div>
+      <div class="reason" data-r><span class="serif">03</span><h4>디자인·영상팀과<br>말이 통합니다</h4><p>편집PD로 1년 넘게 일했고, 브랜드 채널을 직접 만들고 운영했습니다.</p></div>
+    </div>
+
+    <div class="offclock" data-r>
+      <img src="img/profile.jpg" alt="" width="120" height="120" loading="lazy">
+      <p>영화를 좋아해서 리뷰 페이지를 운영했고,<br class="d-only"> 영상을 좋아해서 편집을 배웠습니다.<span>좋아하는 것을 오래 하다 보면, 그게 일하는 방식이 되더라고요.</span></p>
+    </div>
+  </div>
+  <div class="marquee" aria-label="쉴 때 보는 것: YouTube, Netflix, Instagram, TikTok, SOOP">
+    <div class="marquee-in" aria-hidden="true">
+      <span><b>쉴 때는</b>YouTube</span><span>Netflix</span><span>Instagram</span><span>TikTok</span><span>SOOP</span><span>Independent Films</span>
+      <span><b>쉴 때는</b>YouTube</span><span>Netflix</span><span>Instagram</span><span>TikTok</span><span>SOOP</span><span>Independent Films</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec" id="experience">
+  <div class="wrap">
+    <p class="label" data-r><span class="no">05</span>Experience</p>
+    <h2 class="h2" data-r style="margin-top:24px">마케팅 실무 2년 3개월</h2>
+    <div class="tl" id="tl">
+      <div class="tl-line" aria-hidden="true"></div>
+      <div class="tl-item main" data-r><p class="when">2024.10 – 2026.08<small>1년 11개월</small></p><div><h4>보험닷컴<span>퍼포먼스 마케터</span></h4><p>네이버 검색광고(파워링크·파워컨텐츠), 카페·블로그 바이럴, 공식 블로그 운영</p></div></div>
+      <div class="tl-item main" data-r><p class="when">2024.01 – 2024.04<small>4개월</small></p><div><h4>닥터웰<span>퍼포먼스 마케터</span></h4><p>메타 광고 중심 퍼포먼스 마케팅, 카페 바이럴, 대행사 커뮤니케이션, 보도자료, 체험단</p></div></div>
+      <div class="tl-item" data-r><p class="when">2022.07 – 2022.10<small>4개월</small></p><div><h4>위글<span>마케팅 인턴</span></h4><p>숏폼 커머스 앱, 체험단 약 200명 운영, 시즌 기획전 기획</p></div></div>
+      <div class="tl-item" data-r><p class="when">2022.02 – 2022.03<small>2개월</small></p><div><h4>스카이벤쳐스<span>AE 인턴</span></h4><p>BBQ X LCK 인스타그램 채널 기획·운영, BBQ 대학생 봉사단 운영</p></div></div>
+      <div class="tl-item" data-r><p class="when">2019.09 – 2020.09<small>1년 1개월</small></p><div><h4>스튜디오 일기당천<span>편집PD</span></h4><p>지자체·협회 홍보영상 편집, 실내 촬영 보조</p></div></div>
+    </div>
+
+    <p class="sub-h" data-r>EDUCATION &amp; ACTIVITY</p>
+    <div class="edu" data-r>
+      <div><b>2023</b><span>명지대 마케팅 학회 IM GA4·GTM 강의</span></div>
+      <div><b>2023</b><span>뉴스레터 '마케터 일잘몰러' 제작</span></div>
+      <div><b>2022</b><span>그로스 마케팅 부트캠프 수료</span></div>
+      <div><b>2022</b><span>명지대학교 경영학과 졸업</span></div>
+      <div><b>2021</b><span>진에어 X 명지대 기업연계 프로젝트</span></div>
+      <div><b>2019</b><span>남해 바래길 홍보영상 공모전 2등</span></div>
+      <div><b>2018</b><span>롯데시네마 X 스탠리 큐브릭 기획전 서포터즈</span></div>
+    </div>
+
+    <p class="sub-h" data-r>SKILLS</p>
+    <div class="skills" data-r>
+      <div><b>Ads</b><div class="chips"><span class="chip">네이버 검색광고 (파워링크 · 파워컨텐츠)</span><span class="chip">Meta 광고</span></div></div>
+      <div><b>Viral</b><div class="chips"><span class="chip">카페 바이럴</span><span class="chip">블로그 인플루언서</span><span class="chip">체험단</span><span class="chip">보도자료</span></div></div>
+      <div><b>Data</b><div class="chips"><span class="chip">GA4</span><span class="chip">GTM</span><span class="chip">Meta Pixel</span><span class="chip">UTM</span></div></div>
+      <div><b>Creative &amp; AI</b><div class="chips"><span class="chip">Premiere Pro</span><span class="chip">After Effects</span><span class="chip">ChatGPT (광고 문구·소재)</span></div></div>
+      <div><b>Tools</b><div class="chips"><span class="chip">Imweb</span><span class="chip">Stibee</span><span class="chip">Slack</span><span class="chip">Excel</span><span class="chip">PowerPoint</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="dark contact" id="contact" data-dark>
+  <div class="wrap">
+    <p class="label" data-r><span class="no">06</span>Contact</p>
+    <h2 class="big" data-r>예산은 키우고,<br><em>효율은 지키겠습니다.</em></h2>
+    <p class="lead" data-r>이야기 나눠 보고 싶으시다면 편하게 연락 주세요.</p>
+    <div class="mail" data-r>
+      <a class="btn" href="mailto:tasadaz@naver.com">이메일 보내기</a>
+      <span class="addr">tasadaz@naver.com</span>
+      <button class="copy" type="button" data-copy="tasadaz@naver.com">주소 복사</button>
+    </div>
+    <div class="foot"><span>© 2026 Kang Dongwook</span><a href="#hero">맨 위로 ↑</a></div>
+  </div>
+</section>
+</main>
+
+<div class="sticky-cta" id="stickyCta"><a href="mailto:tasadaz@naver.com">이메일 보내기 · tasadaz@naver.com</a></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isTouch = window.matchMedia('(hover: none)').matches;
+  var mobile = window.matchMedia('(max-width: 760px)').matches;
+  var header = document.getElementById('top');
+  var progress = document.querySelector('.progress');
+
+  /* header hide/show + progress */
+  var lastY = 0;
+  function onScroll(){
+    var y = window.scrollY || 0;
+    var h = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+    header.classList.toggle('scrolled', y > 20);
+    if (!menu.classList.contains('open')) header.classList.toggle('hide', y > lastY && y > 300);
+    lastY = y;
+    // dark sections under header
+    var onDark = false;
+    document.querySelectorAll('[data-dark]').forEach(function(s){ var r = s.getBoundingClientRect(); if (r.top <= 32 && r.bottom >= 32) onDark = true; });
+    header.classList.toggle('on-dark', onDark);
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+
+  /* menu */
+  var menu = document.getElementById('menu'), burger = document.querySelector('.burger');
+  function setMenu(open){ menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : ''; if (open) menu.querySelector('.close').focus(); }
+  burger.addEventListener('click', function(){ setMenu(true); });
+  menu.querySelector('.close').addEventListener('click', function(){ setMenu(false); burger.focus(); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  addEventListener('keydown', function(e){ if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); burger.focus(); } });
+
+  /* copy + toast */
+  var toast = document.getElementById('toast'), tt;
+  function showToast(msg){ toast.textContent = msg; toast.classList.add('on'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('on'); }, 2000); }
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = b.getAttribute('data-copy');
+      try { navigator.clipboard.writeText(v).then(function(){ showToast('이메일 주소를 복사했어요'); }, function(){ showToast(v); }); }
+      catch(e){ showToast(v); }
+    });
+  });
+
+  /* sticky mobile CTA */
+  var cta = document.getElementById('stickyCta');
+  if ('IntersectionObserver' in window) {
+    var heroVis = true, contactVis = false;
+    var upd = function(){ cta.classList.toggle('show', !heroVis && !contactVis); };
+    new IntersectionObserver(function(es){ heroVis = es[0].isIntersecting; upd(); }, {threshold:0.05}).observe(document.querySelector('.hero-actions'));
+    new IntersectionObserver(function(es){ contactVis = es[0].isIntersecting; upd(); }, {threshold:0.05}).observe(document.getElementById('contact'));
+  }
+
+  /* How steps: active state (works with or without GSAP) */
+  var steps = document.querySelectorAll('.step'), howNo = document.getElementById('howNo');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) {
+        steps.forEach(function(s){ s.classList.remove('on'); });
+        e.target.classList.add('on');
+        var i = Array.prototype.indexOf.call(steps, e.target) + 1; howNo.textContent = ('0' + i).slice(-2);
+      }});
+    }, {rootMargin:'-30% 0px -55% 0px'});
+    steps.forEach(function(s){ io.observe(s); });
+    steps[0].classList.add('on');
+  }
+
+  if (reduce || !window.gsap || !window.ScrollTrigger) { onScroll(); return; }
+
+  gsap.registerPlugin(ScrollTrigger);
+  document.documentElement.classList.add('anim');
+
+  /* smooth scroll on desktop only */
+  if (window.Lenis && !isTouch) {
+    var lenis = new Lenis({lerp:0.1});
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){ var id = a.getAttribute('href'); var el = document.querySelector(id); if (el) { e.preventDefault(); lenis.scrollTo(el, {offset: id === '#hero' ? 0 : -10}); } });
+    });
+  }
+
+  var D = mobile ? 0.6 : 0.95, Y = mobile ? 14 : 28, E = 'power3.out';
+
+  /* hero intro */
+  gsap.set('.hero [data-h]', {opacity:0, y:Y});
+  gsap.set('.hero h1 .ln > span', {yPercent:105});
+  var tl = gsap.timeline({defaults:{ease:E}});
+  tl.to('.hero .eyebrow', {opacity:1, y:0, duration:.6})
+    .to('.hero h1 .ln > span', {yPercent:0, duration:.9, stagger:.1}, '-=.35')
+    .to('.hero [data-h]:not(.eyebrow)', {opacity:1, y:0, duration:.7, stagger:.08}, '-=.5');
+
+  /* reveals */
+  gsap.utils.toArray('[data-r]').forEach(function(el){
+    gsap.to(el, {opacity:1, y:0, duration:D, ease:E, scrollTrigger:{trigger:el, start:'top 88%', once:true}});
+  });
+
+  /* count-up */
+  function fmt(n){ return Math.round(n).toLocaleString('ko-KR'); }
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var to = +el.getAttribute('data-count'), o = {v:0};
+    el.textContent = '0';
+    var inHero = !!el.closest('.hero');
+    gsap.to(o, {v:to, duration: to > 100 ? 1.6 : 1.2, ease:'power2.out', delay: inHero ? .9 : 0,
+      onUpdate:function(){ el.textContent = fmt(o.v); },
+      scrollTrigger: inHero ? null : {trigger:el, start:'top 90%', once:true}});
+  });
+
+  /* signature chart: long, long, short-then-stop */
+  var bars = gsap.utils.toArray('[data-bar]');
+  gsap.set(bars, {scaleX:0});
+  gsap.set('.bar-val', {opacity:0});
+  var ct = gsap.timeline({scrollTrigger:{trigger:'#chart', start:'top 70%', once:true}});
+  ct.to(bars[0], {scaleX:1, duration:1.4, ease:'power3.out'})
+    .to('.r1 .bar-val', {opacity:1, duration:.4}, '-=.4')
+    .to(bars[1], {scaleX:1, duration:1.3, ease:'power3.out'}, '-=.9')
+    .to('.r2 .bar-val', {opacity:1, duration:.4}, '-=.4')
+    .to(bars[2], {scaleX:1, duration:.6, ease:'power4.out'}, '+=.25')
+    .fromTo('.bar-val.hl', {opacity:0, scale:.8}, {opacity:1, scale:1, duration:.5, ease:'back.out(2)'}, '-=.15');
+
+  /* timeline line */
+  gsap.fromTo('.tl-line', {scaleY:0}, {scaleY:1, ease:'none', scrollTrigger:{trigger:'#tl', start:'top 75%', end:'bottom 70%', scrub:true}});
+
+  /* gentle parallax on project media (desktop) */
+  if (!mobile) {
+    gsap.utils.toArray('.proj-media img').forEach(function(img){
+      if (img.closest('.films')) return;
+      gsap.fromTo(img, {scale:1.08, yPercent:-3}, {scale:1.08, yPercent:3, ease:'none', scrollTrigger:{trigger:img, start:'top bottom', end:'bottom top', scrub:true}});
+    });
+  }
+
+  onScroll();
+  addEventListener('load', function(){ ScrollTrigger.refresh(); });
+  document.querySelectorAll('details').forEach(function(d){ d.addEventListener('toggle', function(){ ScrollTrigger.refresh(); }); });
+})();
+</script>
+</body>
+</html>

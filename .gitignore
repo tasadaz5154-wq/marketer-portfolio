@@ -1,0 +1,5 @@
+*.zip
+extracted/
+.vercel
+.DS_Store
+Thumbs.db
